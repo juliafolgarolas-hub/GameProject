@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff7f0;
+    }
+    /* Header naranja */
+    .capcalera {
+      background: linear-gradient(90deg, #ff7a00, #ffb74d);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .navegacio ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    .navegacio a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .navegacio a:hover {
+      color: #ffe0b2;
+      transform: scale(1.1);
+    }
+    .boto-carrito {
+      display: inline-block;
+      background: #ff7a00;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .boto-carrito:hover {
+      transform: scale(1.1);
+    }
+    /* Carrito */
+    .carrito-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-left: 6px solid #ff7a00;
+    }
+    .carrito-container ul {
+      list-style: none;
+      padding: 0;
+    }
+    .carrito-container li {
+      background: #ffe3cc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    .total {
+      font-size: 1.3rem;
+      text-align: right;
+      margin-top: 15px;
+    }
+    .btn-volver, .btn-borrar, .btn-pagar {
+      display: block;
+      width: fit-content;
+      margin: 20px auto;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-volver { background: #ff7a00; }
+    .btn-borrar { background: #ff5722; }
+    .btn-pagar { background: #43a047; }
+  </style>
+</head>
+<body>
+
+<header class="capcalera">
+    <div class="logo">
+      🛒 <span>Carrito</span>
+    </div>
+
+    <nav class="navegacio">
+      <ul>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\index enllaçat.html">Inici</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Cataleg.html">Catàleg</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Accessoris.html">Accessoris</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Politica.html">Política</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\enviaments.html">Enviaments</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\contacte.html">Contacte</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Carrito.html" class="boto-carrito">
+      🛒
+    </a>
+</header>
+
+<div class="carrito-container">
+  <ul id="carrito-lista"></ul>
+  <p class="total">Total: €<span id="carrito-total">0.00</span></p>
+
+  <div id="paypal-button-container"></div>
+  <button class="btn-borrar" id="vaciarCarrito">Vaciar Carrito 🗑️</button>
+  <button class="btn-pagar" id="pagarAhora">Pagar Ahora 💳</button>
+</div>
+
+<a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Cataleg.html" class="btn-volver">⬅ Volver al Catálogo</a>
+
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=EUR"></script>
+<script>
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+function actualizarCarrito() {
+  const lista = document.getElementById('carrito-lista');
+  const totalElem = document.getElementById('carrito-total');
+  lista.innerHTML = '';
+
+  let total = 0;
+  carrito.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.nombre} - €${item.precio.toFixed(2)} x ${item.cantidad}`;
+    lista.appendChild(li);
+    total += item.precio * item.cantidad;
+  });
+
+  totalElem.textContent = total.toFixed(2);
+}
+
+actualizarCarrito();
+
+document.getElementById('vaciarCarrito').addEventListener('click', function() {
+  if (confirm('¿Seguro que quieres vaciar todo el carrito?')) {
+    carrito = [];
+    localStorage.removeItem('carrito');
+    actualizarCarrito();
+  }
+});
+
+document.getElementById('pagarAhora').addEventListener('click', function() {
+  alert('Redirigiendo a PayPal para completar la compra...');
+  document.querySelector('#paypal-button-container iframe')?.contentWindow.focus();
+});
+
+paypal.Buttons({
+  createOrder: function(data, actions) {
+    const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0).toFixed(2);
+    return actions.order.create({ purchase_units: [{ amount: { value: total } }] });
+  },
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      alert(`Gracias por tu compra, ${details.payer.name.given_name}!`);
+      carrito = [];
+      localStorage.removeItem('carrito');
+      actualizarCarrito();
+    });
+  }
+}).render('#paypal-button-container');
+</script>
+
+</body>
+</html>

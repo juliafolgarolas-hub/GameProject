@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ciutat en Crisi - Fitxa del joc</title>
+  <link rel="stylesheet" href="ciutat-en-crisi.css" />
+</head>
+<body>
+
+  <!-- Capçalera amb menú de navegació -->
+  <header class="capcalera">
+    <div class="logo">🏗️ <span>Ciutat en Crisi</span></div>
+
+    <nav class="navegacio">
+      <ul>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\index enllaçat.html">Inici</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Cataleg.html">Catàleg</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Accessoris.html">Accessoris</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Politica.html">Política</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\enviaments.html">Enviaments</a></li>
+        <li><a href= "C:\Users\julia\OneDrive\Escritorio\Projecte joc\contacte.html" >Contacte</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Carrito.html" class="boto">
+  🛒
+</a>
+  </header>
+
+  <!-- Fitxa del producte -->
+  <main class="fitxa" id="inici">
+    <div class="imatge">
+      <img src="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Juegos\cuitat.jpg"
+       alt="Ciutat en Crisi - portada">
+    </div>
+
+    <h1>🏗️ Ciutat en Crisi</h1>
+    <p><strong>Construeix, gestiona i salva la teva ciutat amb cartes i blocs!</strong><br>
+    A <em>Ciutat en Crisi</em> tiraràs endavant una ciutat utilitzant cartes d'acció, cartes d'esdeveniment i blocs (fitxes) de construcció. Equilibra infraestructures, recursos i emergències per evitar el col·lapse.</p>
+
+    <h2 id="components">🔹 Components del joc</h2>
+    <ul>
+      <li>1 tauler central modular</li>
+      <li>120 cartes (construcció, política, esdeveniment, recurs)</li>
+      <li>Blocsets amb fitxes 3D (habitatge, serveis, fàbriques, parcs)</li>
+      <li>Fitxes de població i indicadors (aigua, energia, residus)</li>
+      <li>5 pantalles de jugador i 1 ruleta d'esdeveniments</li>
+      <li>Reglament i fulls de puntuació</li>
+    </ul>
+
+    <h2 id="com-jugar">🔸 Com es juga</h2>
+    <ol>
+      <li>Cada ronda cada jugador juga una carta i pot col·locar fins a un bloc a la seva àrea urbana.</li>
+      <li>Les cartes poden ser: construir, millorar, robar recurs, aplicar política o activar esdeveniment.</li>
+      <li>Després de les jugades, es resol la fase d'esdeveniments (climatologia, falles de xarxa, protestes).</li>
+      <li>Gestiona recursos: si l'aigua o l'energia arriben a zero, la ciutat pateix penalitzacions greus.</li>
+      <li>Objectiu: arribar a la ronda final amb la ciutat en estat estable (indicadors per sobre del llindar) o aconseguir la millor puntuació de benestar.</li>
+      <li>Mode cooperatiu: tots els jugadors treballen per salvar la ciutat; mode competitiu: punts per desenvolupament i sostenibilitat.</li>
+    </ol>
+
+    <h2 id="public">👥 Públic i durada</h2>
+    <p><strong>Edat:</strong> +12 anys<br>
+    <strong>Jugadors:</strong> 2 – 5<br>
+    <strong>Durada:</strong> 40 – 90 minuts (segons mode i nombre de jugadors)</p>
+
+    <div class="preu" id="botiga">💰 Preu: 12,99 €</div>
+
+    <a id="whatsappBtn" class="boto" target="_blank">
+  WhatsApp 
+</a>
+<a class="boto" onclick="agregarAlCarrito('Ciutat en Crisi', 12.99)">
+  Afegir al carretó 🛒
+</a>
+
+    <div class="info-extra">Dissenyat per simular decisions urbanes reals · Ideal per a jugadors que estimen la gestió i la sostenibilitat.</div>
+  </main>
+
+<script>
+  // ⚠️ POSA AQUÍ EL TEU NÚMERO EN FORMAT INTERNACIONAL
+  const phoneNumber = "34600111222";  // Exemple: +34 600 111 222 → 34600111222
+
+  document.getElementById("whatsappBtn").addEventListener("click", function() {
+
+    const producte = "Ciutat en crisi";  // Nom del joc
+    const quantitat = 1;        // Pots canviar-ho o fer-ho variable
+    const metode = "PayPal";    // Fix com has demanat
+
+    // Missatge automàtic
+    const msg = `\n- Producte: ${producte}\n- Quantitat: ${quantitat}\n- Adreça: Avinguda de Sant Bernat Calbó, 8, 08500, Vic (Barcelona) \n- Mètode de pagament: ${metode}`;
+
+    // Crear el link de WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+
+    // Obrir WhatsApp
+    window.open(url, "_blank");
+  });
+</script>   
+
+
+
+
+<!-- añadir al carrito script-->
+<script>
+function agregarAlCarrito(nombre, precio) {
+
+  // Leer carrito existente o crear uno nuevo
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si el producto ya está
+  const existente = carrito.find(item => item.nombre === nombre);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({
+      nombre: nombre,
+      precio: precio,
+      cantidad: 1
+    });
+  }
+
+  // Guardar en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  alert("Producto añadido al carrito 🛒");
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* Capçalera i navegació (taronges) */
+.capcalera {
+  background: linear-gradient(90deg, #ff7043, #ffb74d);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navegacio ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.navegacio a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.navegacio a:hover { transform: scale(1.05); opacity: 0.95; }
+
+.carreto { font-size: 22px; cursor: pointer; }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .capcalera { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px; }
+  .navegacio ul { flex-wrap: wrap; gap: 10px; }
+}
+
+/* Cos principal */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg,#fff3e0,#fff8e1);
+  color: #4e342e;
+  line-height: 1.6;
+}
+
+/* Fitxa / card */
+.fitxa {
+  max-width: 960px;
+  margin: 36px auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.imatge img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+}
+
+h1 {
+  text-align: left;
+  color: #ef6c00;
+  font-size: 2rem;
+  margin: 8px 0 12px;
+}
+
+h2 {
+  color: #fb8c00;
+  font-size: 1.05rem;
+  padding-left: 10px;
+  border-left: 5px solid #ffd180;
+  margin-top: 22px;
+}
+
+ul, ol { margin-left: 22px; }
+
+/* Botó i preu */
+.preu {
+  font-weight: 700;
+  color: #ef6c00;
+  margin: 18px 0;
+  font-size: 1.15rem;
+}
+
+.boto {
+  display: inline-block;
+  background: linear-gradient(90deg,#ffa726,#fb8c00);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 26px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(255,138,101,0.18);
+  transition: transform 0.12s ease;
+}
+
+.boto:hover { transform: translateY(-3px); }
+
+/* info extra */
+.info-extra {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: #6d4c41;
+  text-align: left;
+}
+
+/* mobile tweaks */
+@media (max-width: 600px) {
+  .fitxa { margin: 18px; padding: 18px; }
+  h1 { font-size: 1.4rem; }
+  .boto { width: 100%; text-align: center; }
+}

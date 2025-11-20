@@ -1,0 +1,143 @@
+/* === FONS TARONJA GENERAL === */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ffbd8a, #ffd9b5, #ffe7cd);
+    margin: 0;
+    padding: 0;
+}
+
+/* === CAPÇALERA I MENÚ === */
+.capcalera {
+    background: linear-gradient(90deg, #ff7043, #ff8a65);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navegacio ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navegacio a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.navegacio a:hover {
+    color: #fff8e1;
+    transform: scale(1.1);
+}
+
+.carreto:hover {
+    transform: scale(1.2);
+}
+
+/* === RESPONSIVE MENU === */
+@media (max-width: 700px) {
+    .capcalera { flex-direction: column; gap: 8px; }
+    .navegacio ul { flex-wrap: wrap; justify-content: center; }
+}
+
+/* === TÍTOLS === */
+.title-center {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 2.5em;
+    color: #ff6b00;
+    font-weight: bold;
+}
+
+/* === TÍTOLS === */
+.title-center {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 2.4em;
+    color: #ff6b00;
+    font-weight: bold;
+}
+
+.subtitle-center {
+    text-align: center;
+    font-size: 1.8em;
+    color: #d35400;
+    margin: 40px 0 20px 0;
+}
+
+/* === INTRO === */
+.intro {
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.intro h2 {
+    color: #d35400;
+}
+
+.intro p {
+    color: #444;
+}
+
+/* === MAPA === */
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* === PARTNERS / COL·LABORADORS === */
+.partners {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.partner-card {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0,0,0,0.3);
+}
+
+.partner-card img {
+    width: 110px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.partner-card h3 {
+    color: #ff6b00;
+}

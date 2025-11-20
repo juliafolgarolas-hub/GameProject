@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessoris</title>
+    <link rel="stylesheet" href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Accssoris.html">
+    
+</head>
+<body>
+
+    <div class="intro">
+        <h1>TaulaMàgica</h1>
+        <h2>“On cada tirada és una aventura!”</h2>
+        <p>🎲 A TaulaMàgica som uns apassionats dels jocs! Fem de tot: estratègia, aventures, partides ràpides, misteri… i molt més! Cada joc és una porta a la diversió i a moments inoblidables amb amics i família. Aquí els pots veure tots… prepara’t per gaudir com mai! 🃏✨.</p>
+    </div>
+
+    <h1>Catàleg de Jocs</h1>
+
+    <div class="catalogue">
+        <div class="game-card"><a href="joc1.html"><img src="https://via.placeholder.com/300x200" alt="Joc 1"><div class="game-info"><h2><a href="arxiu julia">Qui se les queda</a></h2><p class="description">Breve descripció del joc 1.</p><p class="price">25€</p></div></a></div>
+        <div class="game-card"><a href="joc2.html"><img src="https://via.placeholder.com/300x200" alt="Joc 2"><div class="game-info"><h2>Huella</h2><p class="description">Breve descripció del joc 2.</p><p class="price">30€</p></div></a></div>
+        <div class="game-card"><a href="joc3.html"><img src="https://via.placeholder.com/300x200" alt="Joc 3"><div class="game-info"><h2>Urbatica</h2><p class="description">Breve descripció del joc 3.</p><p class="price">20€</p></div></a></div>
+        <div class="game-card"><a href="joc4.html"><img src="https://via.placeholder.com/300x200" alt="Joc 4"><div class="game-info"><h2>Falsa identitat</h2><p class="description">Breve descripció del joc 4.</p><p class="price">35€</p></div></a></div>
+        <div class="game-card"><a href="joc5.html"><img src="https://via.placeholder.com/300x200" alt="Joc 5"><div class="game-info"><h2>Up</h2><p class="description">Breve descripció del joc 5.</p><p class="price">28€</p></div></a></div>
+        <div class="game-card"><a href="joc6.html"><img src="https://via.placeholder.com/300x200" alt="Joc 6"><div class="game-info"><h2>Ciutat en crisis</h2><p class="description">Breve descripció del joc 6.</p><p class="price">32€</p></div></a></div>
+        <div class="game-card"><a href="joc7.html"><img src="https://via.placeholder.com/300x200" alt="Joc 7"><div class="game-info"><h2>Spide grap</h2><p class="description">Breve descripció del joc 7.</p><p class="price">22€</p></div></a></div>
+    </div>
+
+</body>
+</html>
+
+

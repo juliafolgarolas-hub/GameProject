@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punts de Venda - TaulaMàgica</title>
+
+    <!-- Enllaç al CSS -->
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="punts-venda.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+</head>
+
+<body>
+
+<!-- 🔸 Menú de navegació -->
+<header>
+  <div class="navbar">
+    <div class="logo">🧩 TaulaMàgica</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inici</a></li>
+      <li><a href="Cataleg.html">Catàleg</a></li>
+      <li><a href="Accessoris.html">Accessoris</a></li>
+      <li><a href="Politica.html">Política</a></li>
+      <li><a href="enviaments.html">Enviaments</a></li>
+      <li><a href="contacte.html">Contacte</a></li>
+      <li><a href="punts-venda.html">Punts de venda</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- 🗺️ CONTINGUT -->
+<h1 class="title-center">Punts de Venda Oficials</h1>
+
+<div class="intro">
+    <h2>On pots trobar els nostres jocs 🧭✨</h2>
+    <p>
+        Els nostres jocs estan disponibles a botigues especialitzades, llibreries,
+        espais educatius i cooperatives. Consulta el mapa i descobreix el punt de venda
+        més proper!
+    </p>
+</div>
+
+<div id="map"></div>
+<div class="legend">
+    <strong>Llegenda:</strong><br>
+    <span class="direction"></span> Ubicació marcada: C/ Sant Bernat Calbó 8, 08500 Vic
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+<script>
+  // Mapa Leaflet
+  var lat = 41.9335;
+  var lon = 2.2530;
+  var map = L.map('map').setView([lat, lon], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+  L.marker([lat, lon]).addTo(map)
+    .bindPopup('<b>Ubicació:</b> C/ Sant Bernat Calbó 8, 08500 Vic')
+    .openPopup();
+
+  // Menú responsive
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>

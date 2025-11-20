@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speedy Grab - Fitxa del joc</title>
+  <link rel="stylesheet" href="speedy-grab.css" />
+</head>
+<body>
+
+  <!-- Capçalera amb menú de navegació -->
+  <header class="capcalera">
+    <div class="logo">⚡ <span>Speedy Grab</span></div>
+
+    <nav class="navegacio">
+      <ul>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\index enllaçat.html">Inici</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Cataleg.html">Catàleg</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Accessoris.html">Accessoris</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Politica.html">Política</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\enviaments.html">Enviaments</a></li>
+        <li><a href= "C:\Users\julia\OneDrive\Escritorio\Projecte joc\contacte.html" >Contacte</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Carrito.html" class="boto">
+  🛒
+</a>
+  </header>
+
+  <!-- Fitxa del joc -->
+  <main class="fitxa" id="inici">
+    <center>
+    <div class="imatge">
+      <img src="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Juegos\speedy grab.jpg" height="300" width="300" alt="Speedy Grab - portada">
+    </div> </center>
+
+    <h1>⚡ Speedy Grab</h1>
+
+    <p><strong>Actua ràpid i agafa la carta abans que els altres!</strong><br>
+    En <strong>Speedy Grab</strong> el Grab MASTER crida en veu alta un objecte o un número; els jugadors s’han d’espavilar per agafar la carta corresponent. Qui acumuli més cartes al final, guanya.</p>
+
+    <h2 id="components">🔹 Components del joc</h2>
+    <ul>
+      <li>60 cartes d'objectes i números</li>
+      <li>1 rellotge/temporitzador opcional</li>
+      <li>Reglament i variants de joc</li>
+    </ul>
+
+    <h2 id="com-jugar">🔸 Com es juga</h2>
+    <ol>
+      <li>Escull un Grab MASTER (qui crida les cartes).</li>
+      <li>El Grab MASTER diu en veu alta un objecte o número.</li>
+      <li>Tots els jugadors intenten agafar ràpidament la carta indicada.</li>
+      <li>Si agafes la carta correcta, te la quedes; si no, torna a la pila.</li>
+      <li>El joc continua fins a esgotar les cartes o al cap d'un nombre de rondes acordat.</li>
+      <li>Guanya qui tingui més cartes al final.</li>
+    </ol>
+
+    <h2 id="public">👧 Públic i durada</h2>
+    <p><strong>Edat:</strong> +6 anys<br>
+    <strong>Jugadors:</strong> 2 – 8<br>
+    <strong>Durada:</strong> 10 – 20 minuts per partida</p>
+
+    <div class="preu" id="botiga">💰 Preu: 9,99 €</div>
+
+    <a id="whatsappBtn" class="boto" target="_blank">
+  WhatsApp 
+</a>
+<a class="boto" onclick="agregarAlCarrito('Speedy Grab', 9.99)">
+  Afegir al carretó 🛒
+</a>
+
+    <div class="info-extra">Dissenyat per a ràpids i divertits moments en família i amb amics.</div>
+  </main>
+
+<script>
+  // ⚠️ POSA AQUÍ EL TEU NÚMERO EN FORMAT INTERNACIONAL
+  const phoneNumber = "34600111222";  // Exemple: +34 600 111 222 → 34600111222
+
+  document.getElementById("whatsappBtn").addEventListener("click", function() {
+
+    const producte = "Speedy Grab";  // Nom del joc
+    const quantitat = 1;        // Pots canviar-ho o fer-ho variable
+    const metode = "PayPal";    // Fix com has demanat
+
+    // Missatge automàtic
+    const msg = `\n- Producte: ${producte}\n- Quantitat: ${quantitat}\n- Adreça: Avinguda de Sant Bernat Calbó, 8, 08500, Vic (Barcelona) \n- Mètode de pagament: ${metode}`;
+
+    // Crear el link de WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+
+    // Obrir WhatsApp
+    window.open(url, "_blank");
+  });
+</script>   
+
+
+
+
+<!-- añadir al carrito script-->
+<script>
+function agregarAlCarrito(nombre, precio) {
+
+  // Leer carrito existente o crear uno nuevo
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si el producto ya está
+  const existente = carrito.find(item => item.nombre === nombre);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({
+      nombre: nombre,
+      precio: precio,
+      cantidad: 1
+    });
+  }
+
+  // Guardar en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  alert("Producto añadido al carrito 🛒");
+}
+</script>
+
+
+
+</body>
+</html>

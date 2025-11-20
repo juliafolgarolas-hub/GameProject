@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UP - Fitxa del joc</title>
+  <link rel="stylesheet" href="up.css">
+</head>
+
+<body>
+
+  <!-- 🔝 Capçalera amb menú de navegació -->
+  <header class="capcalera">
+    <div class="logo">
+      🔼 <span>UP</span>
+    </div>
+
+    <nav class="navegacio">
+      <ul>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\index enllaçat.html">Inici</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Cataleg.html">Catàleg</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Accessoris.html">Accessoris</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Politica.html">Política</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\enviaments.html">Enviaments</a></li>
+        <li><a href= "C:\Users\julia\OneDrive\Escritorio\Projecte joc\contacte.html" >Contacte</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+    <a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Carrito.html" class="boto">
+  🛒
+</a>
+  </header>
+
+  <!-- 🎲 Fitxa principal del joc -->
+  <div class="fitxa" id="inici">
+    <div class="imatge">
+      <img src="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Juegos\Up .jpg" 
+           alt="Imatge del joc UP">
+    </div>
+
+    <h1>🔼 UP</h1>
+    <p><strong>Un joc de cartes àgil, directe i ple d'estratègia.</strong><br>
+    Cada jugador competeix per obtenir la carta més alta i sumar punts, però les cartes especials poden canviar-ho tot en un instant!</p>
+
+    <h2 id="components">🔹 Components del joc</h2>
+    <ul>
+      <li>70 cartes numerades del 0 al 9 (10 per jugador)</li>
+      <li>Cartes especials amb efectes únics</li>
+      <li>Fitxes de puntuació</li>
+      <li>Reglament</li>
+    </ul>
+
+    <h2 id="com-jugar">🔸 Com es juga</h2>
+    <ol>
+      <li>Cada jugador té 10 cartes numerades del 0 al 9.</li>
+      <li>A cada ronda, tots els jugadors trien una carta i la posen girada (cap per avall).</li>
+      <li>Quan tothom ha triat, les cartes es giren alhora.</li>
+      <li>Si algun jugador juga una <strong>carta especial</strong>, aquesta s’ha de posar visible (cara amunt) des del principi.</li>
+      <li>El jugador amb el número més alt guanya la ronda i obté una fitxa de puntuació.</li>
+      <li>Guanya qui tingui més punts al final de totes les rondes!</li>
+    </ol>
+
+    <h2 id="public">👥 Públic i durada</h2>
+    <p><strong>Edat:</strong> +7 anys<br>
+    <strong>Jugadors:</strong> 2 – 7<br>
+    <strong>Durada:</strong> 10 – 20 minuts</p>
+
+    <div class="preu" id="botiga">
+      💰 Preu: 7,99 €
+    </div>
+
+    <a id="whatsappBtn" class="boto" target="_blank">
+  WhatsApp 
+</a>
+<a class="boto" onclick="agregarAlCarrito('Up', 7.99)">
+  Afegir al carretó 🛒
+</a>
+
+    <div class="info-extra">
+      Joc ideal per a trobades familiars o entre amics · Fàcil d’aprendre, ràpid de jugar ⚡
+    </div>
+  </div>
+
+<script>
+  // ⚠️ POSA AQUÍ EL TEU NÚMERO EN FORMAT INTERNACIONAL
+  const phoneNumber = "34600111222";  // Exemple: +34 600 111 222 → 34600111222
+
+  document.getElementById("whatsappBtn").addEventListener("click", function() {
+
+    const producte = "Up";  // Nom del joc
+    const quantitat = 1;        // Pots canviar-ho o fer-ho variable
+    const metode = "PayPal";    // Fix com has demanat
+
+    // Missatge automàtic
+    const msg = `\n- Producte: ${producte}\n- Quantitat: ${quantitat}\n- Adreça: Avinguda de Sant Bernat Calbó, 8, 08500, Vic (Barcelona) \n- Mètode de pagament: ${metode}`;
+
+    // Crear el link de WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+
+    // Obrir WhatsApp
+    window.open(url, "_blank");
+  });
+</script>   
+
+
+
+
+<!-- añadir al carrito script-->
+<script>
+function agregarAlCarrito(nombre, precio) {
+
+  // Leer carrito existente o crear uno nuevo
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si el producto ya está
+  const existente = carrito.find(item => item.nombre === nombre);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({
+      nombre: nombre,
+      precio: precio,
+      cantidad: 1
+    });
+  }
+
+  // Guardar en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  alert("Producto añadido al carrito 🛒");
+}
+</script>
+
+</body>
+</html>

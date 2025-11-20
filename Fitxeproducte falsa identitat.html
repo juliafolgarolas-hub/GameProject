@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falsa Identitat - Fitxa del joc</title>
+  <link rel="stylesheet" href="falsa-identitat.css">
+</head>
+
+<body>
+
+  <!-- 🔝 Capçalera amb menú de navegació -->
+  <header class="capcalera">
+    <div class="logo">
+      🕵️‍♀️ <span>Falsa Identitat</span>
+    </div>
+
+    <nav class="navegacio">
+      <ul>
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="cataleg.html">Catàleg</a></li>
+        <li><a href="producte.html">Producte</a></li>
+        <li><a href="accessoris.html">Accessoris</a></li>
+        <li><a href="politica.html">Política</a></li>
+        <li><a href="enviaments.html">Enviaments</a></li>
+        <li><a href="contacte.html">Contacte</a></li>
+        <li><a href="punts-venda.html">Punts de venda</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+
+<a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Carrito.html" class="boto">
+  🛒
+</a>
+
+
+    
+  </header>
+
+  <!-- 🎲 Fitxa principal del joc -->
+  <div class="fitxa" id="inici">
+    <center>
+    <div class="imatge">
+      <img src="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Juegos\falsa_id.png" alt="Caixa del joc Falsa Identitats" height="300" width="350"> </img>
+           
+    </div></center>
+
+    <h1>🕵️‍♀️ Falsa Identitat</h1>
+    <p><strong>Posa't en la pell d’una altra persona i enganya els teus amics!</strong><br>
+    En <strong>Falsa Identitat</strong>, cada jugador adopta el rol d’un altre i ha de respondre preguntes com si fos ell. La diversió arriba quan tots intenten endevinar qui representa a qui. Un joc ideal per trencar el gel, riure i conèixer-se millor!</p>
+
+    <h2 id="components">🔹 Components del joc</h2>
+    <ul>
+      <li>60 targetes de personatges (reals i ficticis)</li>
+      <li>40 targetes de preguntes</li>
+      <li>Bloc de puntuació</li>
+      <li>Llapis</li>
+      <li>Reglament</li>
+    </ul>
+
+    <h2 id="com-jugar">🔸 Com es juga</h2>
+    <ol>
+      <li>Cada jugador rep una targeta amb la identitat secreta d’una altra persona.</li>
+      <li>Els jugadors es fan preguntes entre ells i han de respondre com si fossin el personatge assignat.</li>
+      <li>Els altres han d’intentar descobrir qui representa a qui.</li>
+      <li>Al final de la ronda, cadascú intenta endevinar les identitats falses dels altres.</li>
+      <li>Guanya qui hagi endevinat més identitats o hagi enganyat més jugadors! 😄</li>
+    </ol>
+
+    <h2 id="public">👧 Públic i durada</h2>
+    <p><strong>Edat:</strong> +8 anys<br>
+    <strong>Jugadors:</strong> 3 – 8<br>
+    <strong>Durada:</strong> 20 – 40 minuts per partida</p>
+
+    <div class="preu" id="botiga">
+      💰 Preu: 14,99 €
+    </div>
+
+    <a id="whatsappBtn" class="boto" target="_blank">
+  WhatsApp 
+</a>
+<a class="boto" onclick="agregarAlCarrito('Falsa Identitat', 14.99)">
+  Afegir al carretó 🛒
+</a>
+    <div class="info-extra">
+      Dissenyat i fabricat a Catalunya · Joc educatiu i sostenible 🌱
+    </div>
+  </div>
+
+
+
+
+
+
+ <script>
+  // ⚠️ POSA AQUÍ EL TEU NÚMERO EN FORMAT INTERNACIONAL
+  const phoneNumber = "34600111222";  // Exemple: +34 600 111 222 → 34600111222
+
+  document.getElementById("whatsappBtn").addEventListener("click", function() {
+
+    const producte = "Falca Identitat";  // Nom del joc
+    const quantitat = 1;        // Pots canviar-ho o fer-ho variable
+    const metode = "PayPal";    // Fix com has demanat
+
+    // Missatge automàtic
+    const msg = `\n- Producte: ${producte}\n- Quantitat: ${quantitat}\n- Adreça: Avinguda de Sant Bernat Calbó, 8, 08500, Vic (Barcelona) \n- Mètode de pagament: ${metode}`;
+
+    // Crear el link de WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+
+    // Obrir WhatsApp
+    window.open(url, "_blank");
+  });
+</script>   
+
+
+
+
+<!-- añadir al carrito script-->
+<script>
+function agregarAlCarrito(nombre, precio) {
+
+  // Leer carrito existente o crear uno nuevo
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si el producto ya está
+  const existente = carrito.find(item => item.nombre === nombre);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({
+      nombre: nombre,
+      precio: precio,
+      cantidad: 1
+    });
+  }
+
+  // Guardar en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  alert("Producto añadido al carrito 🛒");
+}
+</script>
+</body>
+</html>

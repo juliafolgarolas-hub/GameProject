@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urbàtica - Fitxa del joc</title>
+  <link rel="stylesheet" href="urbatica.css">
+</head>
+
+<body>
+
+  <!-- 🔝 Capçalera amb menú de navegació -->
+  <header class="capcalera">
+    <div class="logo">
+      🏙️ <span>Urbàtica</span>
+    </div>
+
+    <nav class="navegacio">
+      <ul>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\index enllaçat.html">Inici</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Cataleg.html">Catàleg</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Accessoris.html">Accessoris</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Politica.html">Política</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\enviaments.html">Enviaments</a></li>
+        <li><a href= "C:\Users\julia\OneDrive\Escritorio\Projecte joc\contacte.html" >Contacte</a></li>
+        <li><a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\blog.html">Blog</a></li>
+      </ul>
+    </nav>
+<a href="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Carrito.html" class="boto">
+  🛒
+</a>
+    
+  </header>
+
+
+
+  <!-- 🎲 Fitxa principal del joc -->
+  <div class="fitxa" id="inici">
+    <center>
+    <div class="imatge">
+      <img src="C:\Users\julia\OneDrive\Escritorio\Projecte joc\Juegos\Urbatica.jpg" width="300" height="350"
+           alt="Caixa del joc Urbàtica">
+    </div>
+</center>
+
+    <h1>🏙️ Urbàtica</h1>
+    <p><strong>Construeix i gestiona la teva ciutat sostenible!</strong><br>
+    En <strong>Urbàtica</strong> hauràs de prendre decisions estratègiques per equilibrar recursos, energia i benestar dels habitants, minimitzant la contaminació i els residus. Un joc educatiu que et farà reflexionar sobre el canvi climàtic i la gestió urbana sostenible.</p>
+
+    <h2 id="components">🔹 Components del joc</h2>
+    <ul>
+      <li>1 tauler modular de ciutat</li>
+      <li>80 fitxes de recursos (aigua, energia, residus, natura)</li>
+      <li>60 cartes d’esdeveniments i polítiques verdes</li>
+      <li>20 fitxes de construcció (habitatges, fàbriques, parcs...)</li>
+      <li>5 pantalles de jugador</li>
+      <li>Reglament del joc</li>
+    </ul>
+
+    <h2 id="com-jugar">🔸 Com es juga</h2>
+    <ol>
+      <li>Cada jugador comença amb una àrea de ciutat i un nombre limitat de recursos.</li>
+      <li>Al teu torn, pots construir edificis, implementar polítiques sostenibles o millorar serveis públics.</li>
+      <li>Les decisions afecten el nivell de contaminació, el benestar i els recursos disponibles.</li>
+      <li>Els esdeveniments climàtics poden alterar el teu pla (plagues, sequeres, onades de calor...).</li>
+      <li>El joc acaba quan la ciutat arriba al màxim desenvolupament o entra en col·lapse ambiental.</li>
+      <li>Guanya qui gestiona millor la seva ciutat i aconsegueix el millor equilibri ecològic 🌍.</li>
+    </ol>
+
+    <h2 id="public">👧 Públic i durada</h2>
+    <p><strong>Edat:</strong> +10 anys<br>
+    <strong>Jugadors:</strong> 2 – 5<br>
+    <strong>Durada:</strong> 30 – 60 minuts per partida</p>
+
+    <div class="preu" id="botiga">
+      💰 Preu: 18,30 €
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <a id="whatsappBtn" class="boto" target="_blank">
+  WhatsApp 
+</a>
+<a class="boto" onclick="agregarAlCarrito('Urbàtica', 18.30)">
+  Afegir al carretó 🛒
+</a>
+    <div class="info-extra">
+      Dissenyat i fabricat a Catalunya · Joc educatiu i sostenible 🌱
+    </div>
+  </div>
+
+ <script>
+  // ⚠️ POSA AQUÍ EL TEU NÚMERO EN FORMAT INTERNACIONAL
+  const phoneNumber = "34600111222";  // Exemple: +34 600 111 222 → 34600111222
+
+  document.getElementById("whatsappBtn").addEventListener("click", function() {
+
+    const producte = "Urbatica";  // Nom del joc
+    const quantitat = 1;        // Pots canviar-ho o fer-ho variable
+    const metode = "PayPal";    // Fix com has demanat
+
+    // Missatge automàtic
+    const msg = `\n- Producte: ${producte}\n- Quantitat: ${quantitat}\n- Adreça: Avinguda de Sant Bernat Calbó, 8, 08500, Vic (Barcelona) \n- Mètode de pagament: ${metode}`;
+
+    // Crear el link de WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`;
+
+    // Obrir WhatsApp
+    window.open(url, "_blank");
+  });
+</script>   
+
+
+
+
+<!-- añadir al carrito script-->
+<script>
+function agregarAlCarrito(nombre, precio) {
+
+  // Leer carrito existente o crear uno nuevo
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+  // Buscar si el producto ya está
+  const existente = carrito.find(item => item.nombre === nombre);
+
+  if (existente) {
+    existente.cantidad += 1;
+  } else {
+    carrito.push({
+      nombre: nombre,
+      precio: precio,
+      cantidad: 1
+    });
+  }
+
+  // Guardar en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  alert("Producto añadido al carrito 🛒");
+}
+</script>
+
+
+
+
+ <!-- Scripts 
+  <script src="https://www.paypal.com/sdk/js?client-id=jcunianglada@gmail.com&currency=EUR"></script>
+<div id="paypal-button-container"></div>
+
+  <script>
+    const phoneNumber = "34600111222";  // WhatsApp
+
+    // Carrito en memoria
+    let carrito = [];
+
+    const producto = { nombre: "Qui se les queda?", precio: 13.99 };
+
+    // Función para actualizar carrito
+    function actualizarCarrito() {
+      const lista = document.getElementById("carrito-lista");
+      const totalElem = document.getElementById("carrito-total");
+      lista.innerHTML = "";
+      let total = 0;
+      carrito.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nombre} - €${item.precio.toFixed(2)} x ${item.cantidad}`;
+        lista.appendChild(li);
+        total += item.precio * item.cantidad;
+      });
+      totalElem.textContent = total.toFixed(2);
+    }
+
+    // Agregar al carrito y WhatsApp
+    document.getElementById("whatsappBtn").addEventListener("click", function() {
+      const existe = carrito.find(p => p.nombre === producto.nombre);
+      if (existe) {
+        existe.cantidad += 1;
+      } else {
+        carrito.push({...producto, cantidad: 1});
+      }
+
+      actualizarCarrito();
+
+      // Mensaje WhatsApp
+      let msg = "- Comanda del carretó:\n";
+      carrito.forEach(item => {
+        msg += `* ${item.nombre} x${item.cantidad} - €${(item.precio*item.cantidad).toFixed(2)}\n`;
+      });
+      msg += "\nAdreça: Avinguda de Sant Bernat Calbó, 8, 08500, Vic (Barcelona)";
+      window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`, "_blank");
+    });
+
+    // PayPal button
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0).toFixed(2);
+        return actions.order.create({ purchase_units: [{ amount: { value: total } }] });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert(`Gràcies per la compra, ${details.payer.name.given_name}!`);
+          carrito = [];
+          actualizarCarrito();
+        });
+      }
+    }).render('#paypal-button-container');
+
+  </script>
+
+
+</body>
+</html>    -->
+   

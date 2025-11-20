@@ -1,0 +1,137 @@
+/* Capçalera i navegació */
+.capcalera{
+  background: linear-gradient(90deg,#ff7043,#ff8a65);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  font-family:'Poppins',sans-serif;
+  font-size:20px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.logo span{color:#fff8e1}
+
+.navegacio ul{
+  list-style:none;
+  display:flex;
+  gap:18px;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+
+.navegacio a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  transition:transform .15s ease, color .15s ease;
+}
+
+.navegacio a:hover{
+  color:#fff8e1;
+  transform:translateY(-2px);
+}
+
+.carreto{
+  font-size:20px;
+  cursor:pointer;
+  transition:transform .15s ease;
+}
+
+.carreto:hover{ transform:scale(1.15) }
+
+/* Cos principal */
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#fff3e0;
+  color:#4e342e;
+  line-height:1.6;
+}
+
+/* Fitxa */
+.fitxa{
+  max-width:900px;
+  margin:36px auto;
+  background:#fff;
+  padding:28px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.imatge img {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1{
+  margin:18px 0 8px;
+  font-size:2em;
+  color:#e64a19;
+  text-align:center;
+}
+
+p{ margin:0 0 14px; color:#5d4037 }
+
+h2{
+  margin-top:20px;
+  color:#fb8c00;
+  border-left:4px solid #ffd54f;
+  padding-left:10px;
+  font-size:1.05em;
+}
+
+ul,ol{ margin-left:22px }
+
+/* Botó */
+.boto{
+  display:inline-block;
+  background:linear-gradient(90deg,#ffa726,#fb8c00);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:28px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(251,140,0,0.18);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+
+.boto:hover{
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 12px 26px rgba(251,140,0,0.22);
+}
+
+.preu{
+  font-weight:800;
+  color:#ef6c00;
+  margin:16px 0;
+  font-size:1.1em;
+}
+
+/* Info extra */
+.info-extra{
+  margin-top:18px;
+  text-align:center;
+  color:#6d4c41;
+  font-style:italic;
+}
+
+/* Responsive */
+@media (max-width:800px){
+  .navegacio ul{ gap:12px; font-size:14px }
+  .fitxa{ margin:20px; padding:18px }
+  h1{ font-size:1.6em }
+  .boto{ width:100%; text-align:center; padding:12px 16px }
+}

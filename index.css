@@ -1,0 +1,182 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+  background-color: #fff5e6; /* light orange background */
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header (top navigation) */
+.capcalera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff7f50; /* orange shade */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.capcalera .logo span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navegacio ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navegacio a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navegacio a:hover {
+  color: #ffd580; /* lighter orange on hover */
+}
+
+/* Cart icon */
+.carreto {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Page header */
+header h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #ff4500; /* bright orange */
+}
+
+header input[type="search"] {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  width: 50%;
+  max-width: 400px;
+  border: 2px solid #ff7f50;
+  border-radius: 5px;
+}
+
+/* Section title */
+.title-center {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff6347; /* tomato orange */
+  margin: 20px 300 10px 0;
+}
+
+/* Paragraph styling */
+p {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Bold text styling */
+b {
+  color: #ff4500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header input[type="search"] {
+    width: 80%;
+  }
+  
+  .navegacio ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Container for the two boxes */
+.missio-visio-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+/* Individual boxes */
+.missio-box, .visio-box {
+  background-color: #fff; 
+  border: 2px solid #ff7f50; 
+  border-radius: 10px;
+  padding: 20px;
+  width: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Titles inside boxes */
+.missio-box h2, .visio-box h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #ff6347;
+  margin-bottom: 10px;
+}
+
+/* Responsive: stack boxes on mobile */
+@media (max-width: 768px) {
+  .missio-visio-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .missio-box, .visio-box {
+    width: 100%;
+  }
+}
+
+
+
+/* Box for Valors section */
+.valors-box {
+  background-color: #ffffff;
+  border: 2px solid #ff7f50;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Title styling */
+.valors-box h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #ff6347;
+  margin-bottom: 20px;
+}
+
+/* List styling */
+.valors-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.valors-box li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #333;
+}
+
+.valors-box b {
+  color: #ff4500;
+}

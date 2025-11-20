@@ -1,0 +1,219 @@
+/* --- GENERAL PAGE STYLE --- */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ffbd8a, #ffd9b5, #ffe7cd);
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- INTRO DEL TOP --- */
+.intro {
+  max-width: 850px;
+  margin: 0 auto 30px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* --- TÍTOLS --- */
+.intro h1,
+.catalog-title {
+  color: #ff6b3d;
+  text-align: center;
+}
+
+.intro h2 {
+  color: #d35400;
+}
+
+/* --- CATÀLEG DE TARGETES --- */
+.catalogue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+  justify-items: center;
+}
+
+/* --- TARGETA DE JOC --- */
+.game-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* Default white background for all images */
+.game-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background-color: #fff;
+  padding: 10px;
+  display: block;
+  border-bottom: 3px solid #ff6b3d;
+  box-sizing: border-box;
+}
+
+/* --- BLUE BACKGROUND for specific games --- */
+.game-card img.blue-bg {
+  background-color: #4990e2;   /* soft blue background */
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+
+/* --- IMATGE DEL JOC --- */
+.game-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background-color: #fff;
+  padding: 10px;
+  display: block;
+  border-bottom: 3px solid #ff6b3d;
+  box-sizing: border-box;
+}
+
+/* --- INFORMACIÓ DEL JOC --- */
+.card-link {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-link h2 {
+  margin: 10px 0 6px;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #ff6b00;
+}
+
+.description {
+  font-size: 0.95em;
+  color: #555;
+  margin: 6px 0 12px;
+}
+
+.price {
+  font-weight: bold;
+  color: #c0392b;
+  font-size: 1.05em;
+}
+
+/* --- ENLLAÇOS --- */
+.game-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* --- CATÀLEG GRID --- */
+.catalogue {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+/* --- FONS GENERAL --- */
+body {
+  background: linear-gradient(180deg, #ffbd8a, #ffd9b5, #ffe7cd);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* --- INFORMACIÓ DEL JOC --- */
+.card-link {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-link h2 {
+  margin: 10px 0 6px;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #ff6b00;
+}
+
+.description {
+  font-size: 0.95em;
+  color: #555;
+  margin: 6px 0 12px;
+}
+
+.price {
+  font-weight: bold;
+  color: #c0392b;
+  font-size: 1.05em;
+}
+
+/* --- ENLLAÇOS --- */
+.game-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* --- CATÀLEG GRID --- */
+.cataleg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+/* Optional: subtle background behind cards */
+body {
+  background: linear-gradient(180deg, #ffbd8a, #ffd9b5, #ffe7cd);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* --- INFORMACIÓ DEL JOC --- */
+.card-link {
+  padding: 15px 20px;
+}
+
+.card-link h2 {
+  margin: 10px 0 8px;
+  font-size: 1.2em;
+  color: #ff6b00;
+}
+
+.description {
+  font-size: 0.95em;
+  color: #555;
+  margin: 6px 0 12px;
+}
+
+.price {
+  font-weight: bold;
+  color: #c0392b;
+  font-size: 1.05em;
+}
+
+/* --- LINKS --- */
+.game-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+

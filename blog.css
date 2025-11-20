@@ -1,0 +1,140 @@
+/* ===== Reset some default styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Body styling ===== */
+body {
+  background-color: #fff5e6; /* light orange background */
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* ===== Header / Navigation ===== */
+.capcalera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff7f50; /* orange shade */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.capcalera .logo span {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navegacio ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.navegacio a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navegacio a:hover {
+  color: #ffd580; /* lighter orange on hover */
+}
+
+/* Cart icon */
+.carreto {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===== Page headings ===== */
+h1.title-center {
+  text-align: center;
+  margin: 20px 0;
+  color: #ff4500; /* bright orange */
+  font-size: 2rem;
+}
+
+.intro h2 {
+  text-align: center;
+  color: #ff6347; /* tomato orange */
+  margin-bottom: 10px;
+}
+
+.intro p {
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* ===== Blog cards container ===== */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+/* ===== Individual blog cards ===== */
+.blog-card {
+  background-color: #fff2e6; /* soft orange */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.blog-card h3 {
+  color: #ff6347; /* tomato orange */
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+/* ===== Button styling ===== */
+.blog-card .button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff7f50; /* orange button */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.blog-card .button:hover {
+  background-color: #ff4500; /* bright orange on hover */
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 768px) {
+  .navegacio ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blog-container {
+    gap: 15px;
+    padding: 10px;
+  }
+}
